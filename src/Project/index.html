@@ -1,0 +1,27 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Snake</title>
+    <link rel="stylesheet" type="text/css" href="haha.css">
+    <script src="phaser.min.js"></script>
+    <script src="game11.js"></script>
+</head>
+<body>
+<div id =header><h1>Snake Game</h1></div>
+<div id =game>
+    <script>
+        (function() {
+            var game = new Phaser.Game(900, 700, Phaser.AUTO, null);
+
+            game.state.add('Game', Game);
+            game.state.start('Game');
+        })();
+    </script>
+</div>
+</body>
+<div id = contact>
+    <a href='contact.html'>
+        <img src="contactus.png" width ='200'>
+    </a>
+</div>
+</html>
