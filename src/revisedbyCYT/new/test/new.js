@@ -14,21 +14,21 @@ var main= {
         game.load.image('snake', 'asserts/snake.png');
         game.load.image('background', 'asserts/tile.png');
 //        game.load.image('bot','asserts/snake.png');
-        game.load.spritesheet('veggies', 'assets/energy.png', 32, 32);
+        game.load.spritesheet('veggies', 'asserts/energy.png',34,34);
     },
 
     create: function () {
         background =game.add.tileSprite(0,0,
-            1000,600, 'background');
+            1500,700, 'background');
 
 
         veggies = game.add.group();
         veggies.enableBody = true;
         veggies.physicsBodyType = Phaser.Physics.ARCADE;
 
-        for (var i = 0; i < 100; i++)
+        for (var i = 0; i < 50; i++)
         {
-            var c = veggies.create(game.world.randomX, Math.random() * 500, 'veggies', game.rnd.integerInRange(0, 36));
+            var c = veggies.create(game.world.randomX, Math.random() * 600, 'veggies', game.rnd.integerInRange(0, 36));
             c.name = 'veg' + i;
             c.body.immovable = true;
         }
