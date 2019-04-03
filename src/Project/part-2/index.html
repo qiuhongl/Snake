@@ -1,0 +1,19 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Snake</title>
+    <script src="lib/phaser.min.js"></script>
+    <script src="src/game.js"></script>
+</head>
+<body>
+<h1>Snake Game</h1>
+    <script>
+    (function() {
+        var game = new Phaser.Game(900, 700, Phaser.AUTO, null);
+
+        game.state.add('Game', Game);
+        game.state.start('Game');
+    })();
+    </script>
+</body>
+</html>

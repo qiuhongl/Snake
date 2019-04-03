@@ -2,10 +2,10 @@ Game =function(game){}
 var background;var score; var stops;var snake;
 Game.prototype={
     preload:function() {
-        this.game.load.image('background','tilesprite.jpg');
-        this.game.load.image('snake','snake.png');
-        this.game.load.image('energy','energy.jpg');
-        this.game.load.image('button','button.png')
+        this.game.load.image('background','assert/tilesprites.png');
+        this.game.load.image('snake','assert/snake.png');
+        this.game.load.image('energy','assert/energy.jpg');
+        this.game.load.image('button','assert/button.png')
     },
     create: function(){
         this.game.world.setBounds(this.game.world.width, this.game.world.height, this.game.world.width*3, this.game.world.height*4);
@@ -20,7 +20,7 @@ Game.prototype={
 
         score =this.game.add.text('864','16','score: 0', { fontSize: '32px', fill: '#000' });
 //        stops =this.game.add.button(this.game.world.centerX+115,this.game.world.centerY+200,'button',actionOnClick,this.game,2,1,0);
-//       this.game.physics.startSystem(Phaser.Physics.P2JS);
+//        this.game.physics.startSystem(Phaser.Physics.P2JS);
         this.game.camera.follow(snake);
         this.game.physics.enable(snake, Phaser.Physics.ARCADE);
 
