@@ -12,7 +12,7 @@ var lengthtext;
 var main= {
     preload: function () {
         game.load.image('snake', 'asserts/snake.png');
-        game.load.image('background', 'asserts/tile.png');
+        game.load.image('background', 'asserts/tilesprite.jpg');
 //        game.load.image('bot','asserts/snake.png');
         game.load.spritesheet('veggies', 'asserts/energy.png',32,32);
     },
@@ -26,7 +26,7 @@ var main= {
         veggies.enableBody = true;
         veggies.physicsBodyType = Phaser.Physics.ARCADE;
 
-        for (var i = 0; i < 50; i++)
+        for (var i = 0; i < 100; i++)
         {
             var c = veggies.create(game.world.randomX, Math.random() * 600, 'veggies', game.rnd.integerInRange(0, 36));
             c.name = 'veg' + i;
