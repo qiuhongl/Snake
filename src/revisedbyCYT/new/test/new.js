@@ -7,6 +7,8 @@ var snake;
 var spacekey;
 var speed;
 var veggies;
+var length=0;
+var lengthtext;
 var main= {
     preload: function () {
         game.load.image('snake', 'asserts/snake.png');
@@ -32,6 +34,7 @@ var main= {
         }
         snake = game.add.sprite(game.world.centerX, game.world.centerY + 200, 'snake');
         game.physics.enable(snake, Phaser.Physics.ARCADE);
+        lengthtext=game.add.text(800,550,'length:',{font:'24px Arial',})
 
         game.camera.follow(snake)
         spacekey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR)
@@ -55,11 +58,12 @@ var main= {
                 snake.body.velocity.setTo(0, 0);
             }
         }
-
+        lengthtext.text ='length:'+length;
     },
 }
 function collisionHandler(snake,veg){
     veg.kill();
+    length +=1;
 }
 
 
