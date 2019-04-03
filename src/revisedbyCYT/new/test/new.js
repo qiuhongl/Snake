@@ -12,8 +12,11 @@ var main={
     },
 
     create:function () {
-        background =game.add.tileSprite(0,0,
-            800,600, 'background');
+        var wid=800;
+        var hei=600;
+        this.game.world.setBounds(-wid, -hei, wid*2, hei*2);
+        background = game.add.tileSprite(-wid, -hei,
+            800*2, 600*2, 'background');
 
             snake= game.add.sprite(game.world.centerX,game.world.centerY+200,'snake');
             game.physics.enable(snake,Phaser.Physics.ARCADE);
