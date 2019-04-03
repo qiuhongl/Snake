@@ -14,7 +14,7 @@ var main= {
         game.load.image('snake', 'asserts/snake.png');
         game.load.image('background', 'asserts/tile.png');
 //        game.load.image('bot','asserts/snake.png');
-        game.load.spritesheet('veggies', 'asserts/energy.png',34,34);
+        game.load.spritesheet('veggies', 'asserts/energy.png',32,32);
     },
 
     create: function () {
