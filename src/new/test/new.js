@@ -127,15 +127,21 @@ function collisionHandlerbot2(bot2,veg){
     veg.kill();
     bot2length+=1;
 }
+
 setTimeout(function(){
 
     var snakeDict = {"Player1":length,"Bot1":botlength,"Bot2":bot1length,"Bot3":bot2length}
-    var max = ""
-    for (var property in snakeDict) {
-        max = (max < parseFloat(property)) ? parseFloat(property) : max;
+    var max = "";
+    var score = 0;
+    for (var key in snakeDict) {
+        if (snakeDict[key] >= score) {
+            score = snakeDict[key];
+            max = key
+        }
     }
+    max
 
-    alert(max + "won this round!")
+    alert(max + " won this round!")
 
 
 }, 30000);
