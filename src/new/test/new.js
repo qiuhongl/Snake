@@ -11,6 +11,7 @@ var length=0;
 var lengthtext;
 //
 var bot;
+var botlength = 0;
 //
 var main= {
     preload: function () {
@@ -43,6 +44,10 @@ var main= {
         //
         bot = game.add.sprite(game.world.centerX, game.world.centerY, 'bot');
         game.physics.enable(bot, Phaser.Physics.ARCADE)
+        bot.body.collideWorldBounds = true;
+        bot.body.bounce.set(1);
+        bot.body.gravity.y = 20;
+        bot.body.velocity.set(150);
         //
         game.camera.follow(snake)
         spacekey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR)
@@ -51,7 +56,10 @@ var main= {
     },
     update: function () {
         game.physics.arcade.overlap(snake, veggies, collisionHandler, null, this);
-        game.physics.arcade.overlap(snake, bot, collisionHandler1, null, this)
+        //
+        game.physics.arcade.overlap(snake, bot, collisionHandler1, null, this);
+        game.physics.arcade.overlap(bot, veggies, collisionHandler2, null, this);
+        //
         if (spacekey.isDown) {
             speed = 400;
             if (game.input.mousePointer.isDown) {
@@ -76,10 +84,16 @@ function collisionHandler(snake,veg){
     length +=1;
 }
 
+
 //
 function collisionHandler1(snake,bot){
     bot.kill();
-    length +=1;
+    length += botlength;
+}
+
+function collisionHandler2(bot,veg){
+    veg.kill();
+    botlength +=1;
 }
 
 function rank(input){
@@ -93,6 +107,12 @@ function rank(input){
     }
     return winner
 }
+
+function render () {
+
+     game.debug.body(bot);
+}
+
 //
 
 game.state.add('game',main);
