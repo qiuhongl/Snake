@@ -26,7 +26,7 @@ var main= {
         veggies.enableBody = true;
         veggies.physicsBodyType = Phaser.Physics.ARCADE;
 
-        for (var i = 0; i < 100; i++)
+        for (var i = 0; i < 130; i++)
         {
             var c = veggies.create(game.world.randomX, Math.random() * 600, 'veggies', game.rnd.integerInRange(0, 36));
             c.name = 'veg' + i;
