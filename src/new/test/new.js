@@ -141,7 +141,7 @@ setTimeout(function(){
     max
 
     alert(max + " won this round!")
-
+    game.state.restart()
 
 }, 30000);
 
