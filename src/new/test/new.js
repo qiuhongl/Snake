@@ -9,7 +9,6 @@ var speed;
 var veggies;
 var length=0;
 var lengthtext;
-var button;
 var bot;
 var bot1;
 var bot2;
