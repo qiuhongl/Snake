@@ -1,5 +1,5 @@
 Game =function(game){}
-var background;var score; var stops;var snake;
+var background;var score; var stops;var snake;var keys;
 Game.prototype={
     preload:function() {
         this.game.load.image('background','assert/tilesprites.png');
