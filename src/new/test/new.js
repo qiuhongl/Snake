@@ -15,7 +15,7 @@ var bot;
 var main= {
     preload: function () {
         game.load.image('snake', 'asserts/snake.png');
-        game.load.image('background', 'asserts/tile.png');
+        game.load.image('background', 'asserts/tilesprite.jpg');
         //
         game.load.image('bot','asserts/snake.png');
         //
