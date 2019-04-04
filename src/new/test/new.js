@@ -127,17 +127,30 @@ function collisionHandlerbot2(bot2,veg){
     veg.kill();
     bot2length+=1;
 }
-function rank(input){
-    var score = 0;
-    var winner = "";
-    for (var i in input){
-        if (input[i] >= score){
-            score = input[i];
-            winner = i
-        }
+setTimeout(function(){
+
+    var snakeDict = {"Player1":length,"Bot1":botlength,"Bot2":bot1length,"Bot3":bot2length}
+    var max = ""
+    for (var property in snakeDict) {
+        max = (max < parseFloat(property)) ? parseFloat(property) : max;
     }
-    return winner
-}
+
+    alert(max + "won this round!")
+
+
+}, 30000);
+
+// function rank(snake){
+//     var score = 0;
+//     var winner = "";
+//     for (var i in input){
+//         if (input[i] >= score){
+//             score = input[i];
+//             winner = i
+//         }
+//     }
+//     return winner
+// }
 function render(){
     game.debug.body(bot);
     game.debug.body(bot1);
